@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"os"
 
 	"github.com/sirupsen/logrus"
 )
@@ -13,7 +12,6 @@ func init() {
 	if *verbose {
 		logrus.SetLevel(logrus.DebugLevel)
 	}
-	os.MkdirAll("~/.config/OpenRGB-switch", os.ModePerm)
 }
 func main() {
 	ctrl, err := NewController()

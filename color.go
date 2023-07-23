@@ -11,8 +11,8 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-const stateFile = "~/.config/OpenRGB-switch/state"
-const colorFile = "~/.config/OpenRGB-switch/colors"
+var stateFile string //= "~/.config/OpenRGB-switch/state"
+var colorFile string // = "~/.config/OpenRGB-switch/colors"
 
 type Color struct {
 	R uint8
@@ -135,4 +135,17 @@ func parseCurrent(ctrl *Controller) error {
 	ctrl.Current = uint(cu)
 	logrus.WithField("val", ctrl.Current).Debug("current state parsed")
 	return nil
+}
+func init() {
+	home, err := os.UserHomeDir()
+	if err != nil {
+		logrus.Panic(err)
+	}
+	err = os.MkdirAll(home+"/.config/OpenRGB-switch", os.ModePerm)
+	if err != nil {
+		logrus.Panic(err)
+	}
+	stateFile = home + "/.config/OpenRGB-switch/state"
+	colorFile = home + "/.config/OpenRGB-switch/colors"
+
 }
