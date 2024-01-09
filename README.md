@@ -11,6 +11,10 @@ To use the CLI, follow these steps:
 3. Open a terminal or command prompt and navigate to the directory containing downloaded executable.
 5. Execute the binary to change the LED color.
 
+### Keyboard Shortcut
+
+For added convenience, you can create a keyboard shortcut to execute the OpenRGB-switch CLI and change the light color with a single key combination. The specific steps for creating a keyboard shortcut may vary based on your operating system and desktop environment. However, you can generally achieve this by assigning a custom keyboard shortcut to the command that triggers the OpenRGB-switch CLI.
+
 ### Prerequisites
 
 Before using the CLI, ensure that you have OpenRGB installed on your system. You can refer to the [OpenRGB documentation](https://gitlab.com/OpenRGBDevelopers/OpenRGB/-/wikis/home) for installation instructions.
